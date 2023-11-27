@@ -1,3 +1,5 @@
+import Header from "../../views/header/Header";
+import Footer from "../footer/Footer";
 
 
 const Home = () => {
@@ -5,6 +7,8 @@ const Home = () => {
         <div>
             <h1>Home</h1>
             <p>Welcome to the home page!</p>
+            <Header/>
+            <Footer/>
 
         </div>
     )

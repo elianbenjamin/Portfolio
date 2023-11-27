@@ -1,23 +1,21 @@
-
-
-import './App.css'
-import { Route, Routes, useLocation } from "react-router-dom"
-import Footer from './components/footer/Footer'
-import Home from './components/home/Home'
-import SearchBar from './views/searchBar/SearchBar';
+import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './components/home/Home';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 function App() {
-  const {pathname} = useLocation();
- 
   return (
-    <>
-    {pathname === "/" ? <SearchBar/> : null}
-    <Routes>
-    <Route path='/home' element={<Home/>}/> 
-    <Route path='/footer' element={<Footer/>}/> 
-    </Routes>
-    </>
-  )
+    <Router>
+      <div className="App">
+        <>
+          <Routes>
+            <Route path="*" element={<ErrorPage />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;
